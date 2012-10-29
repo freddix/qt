@@ -29,7 +29,7 @@ BuildRequires:	libmng-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libstdc++-devel
 #BuildRequires:	mysql-devel
-BuildRequires:	pkgconfig
+BuildRequires:	pkg-config
 #BuildRequires:	postgresql-devel
 BuildRequires:	sed
 BuildRequires:	sqlite3-devel
