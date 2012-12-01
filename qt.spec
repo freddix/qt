@@ -1,11 +1,11 @@
 Summary:	The Qt GUI application framework
 Name:		qt
-Version:	4.8.3
+Version:	4.8.4
 Release:	1
 License:	GPL/QPL
 Group:		X11/Libraries
 Source0:	http://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-%{version}.tar.gz
-# Source0-md5:	a663b6c875f8d7caa8ac9c30e4a4ec3b
+# Source0-md5:	89c5ecba180cae74c66260ac732dc5cb
 Source2:	%{name}-qtconfig.desktop
 Patch1:		%{name}-buildsystem.patch
 Patch2:		%{name}-improve-cups-support.patch
@@ -686,6 +686,14 @@ COMMONOPT=" \
 	-no-phonon-backend			\
 	-no-rpath				\
 	-no-separate-debug-info			\
+	-no-3dnow				\
+%ifnarch %{x8664}
+	-no-avx					\
+	-no-sse3				\
+	-no-sse4.1				\
+	-no-sse4.2				\
+	-no-ssse3				\
+%endif
 	-nomake demos				\
 	-nomake docs				\
 	-nomake examples			\
