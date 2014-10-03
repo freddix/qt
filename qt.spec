@@ -1,7 +1,7 @@
 Summary:	The Qt GUI application framework
 Name:		qt
 Version:	4.8.6
-Release:	1
+Release:	2
 License:	GPL/QPL
 Group:		X11/Libraries
 Source0:	http://download.qt-project.org/official_releases/qt/4.8/%{version}/qt-everywhere-opensource-src-%{version}.tar.gz
@@ -14,13 +14,14 @@ Patch4:		%{name}-build-lib-static.patch
 Patch5:		%{name}-x11_fonts.patch
 Patch6:		%{name}-no-hardcoded-font-aliases.patch
 Patch7:		%{name}-enable-lcdfilter.patch
+Patch8:		CVE-2014-0190.patch
 URL:		http://www.qtsoftware.com/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	cups-devel
 BuildRequires:	dbus-devel
 BuildRequires:	fontconfig-devel
 BuildRequires:	freetype-devel
-BuildRequires:	giflib-devel
+BuildRequires:	giflib4-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	icu-devel
 BuildRequires:	libjpeg-devel
@@ -631,6 +632,7 @@ Qt documentation in HTML format.
 %patch5 -p1
 %patch6 -p1
 %patch7 -p1
+%patch8 -p1
 
 # adapt QMAKE FLAGS
 %{__sed} -i -e '
